@@ -5,10 +5,7 @@
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Database Schema](#database-schema)
 - [Anonymization Process](#anonymization-process)
-- [Report Generation](#report-generation)
-- [Logging and Error Handling](#logging-and-error-handling)
 - [Testing](#testing)
 
 ## Project Overview
@@ -57,6 +54,15 @@ Run the data ingestion script:
 ```bash
 python etl.py
 ```
+
+
+## Anonymization Process
+
+The anonymization module uses techniques like and data masking and generalization to anonymize sensitive fields. 
+
+Example:
+Before: {"firstname": "John", "birthday":"1980-09-04", "age_group":"/(40-50/]", "email": "john.doe@example.com"}
+After: {"firstname": "/*/*/*/*", "birthday":"/*/*/*/*", "email": "/*/*/*/*", "email_domain": "example.com"}
 
 ## Testing
 
