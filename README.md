@@ -61,8 +61,8 @@ python etl.py
 The anonymization module uses techniques like and data masking and generalization to anonymize sensitive fields. 
 
 Example:
-Before: {"firstname": "John", "birthday":"1980-09-04", "age_group":"/(40-50/]", "email": "john.doe@example.com"}
-After: {"firstname": "/*/*/*/*", "birthday":"/*/*/*/*", "email": "/*/*/*/*", "email_domain": "example.com"}
+Before: {"firstname": "John", "birthday":"1980-09-04", "age_group":"\(40-50\]", "email": "john.doe@example.com"}
+After: {"firstname": "\*\*\*\*", "birthday":"\*\*\*\*", "email": "\*\*\*\*, "email_domain": "example.com"}
 
 ## Testing
 
