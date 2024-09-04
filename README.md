@@ -1,1 +1,67 @@
-# etl_demo
+# Data Ingestion and Reporting Pipeline
+
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Database Schema](#database-schema)
+- [Anonymization Process](#anonymization-process)
+- [Report Generation](#report-generation)
+- [Logging and Error Handling](#logging-and-error-handling)
+- [Testing](#testing)
+
+## Project Overview
+
+This project implements a data pipeline that ingests data from an external API, anonymizes sensitive information, stores the data in a database, and generates a report based on the stored data. The pipeline is designed to be modular, scalable, and easy to configure.
+
+## Features
+
+- **Data Ingestion**: Fetch data from FakerAPI with retry logic.
+- **Data Anonymization**: Replace sensitive information with anonymized values.
+- **Database Storage**: Store the anonymized data in a local SQLite database.
+- **Report Generation**: Questions are addressed in single queries and displayed as logs.
+
+## Installation
+
+### Prerequisites
+
+- Python 3.12
+- Pipenv or virtualenv (recommended)
+
+### Steps
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/jesssiehsieh/etl_demo.git
+    cd etl_demo
+    ```
+
+2. **Set up a virtual environment**:
+    ```bash
+    pipenv install --dev
+    pipenv shell
+    ```
+
+3. **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+### Ingest Data
+
+Run the data ingestion script:
+
+```bash
+python etl.py
+```
+
+## Testing
+
+Unit tests are provided to ensure the functionality of each component in the pipeline. Run the tests using:
+
+```bash
+pytest tests
+```
