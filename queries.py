@@ -32,6 +32,11 @@ CREATE_TABLE_QUERY = '''
 
 QUERY_PERCENTAGE_DE_USERS_WITH_GMAIL= """
     SELECT
+        SUM(CASE WHEN email_domain like '%gmail%'
+                        AND country = 'Germany'
+                        THEN 1
+                ELSE 0 END) as  num_DE_gmail,
+        count(*) as total_users,
         printf("%.2f", SUM(CASE WHEN email_domain like '%gmail%'
                         AND country = 'Germany'
                         THEN 1
@@ -64,7 +69,7 @@ QUERY_OVER_60YO_WITH_GMAIL="""
         WHERE
             (email_domain like '%gmail%')
         )
-    SELECT count(*) FROM split
+    SELECT count(*) as num_60up_gmail FROM split
     WHERE age_older_than > 60
     ;
 """
