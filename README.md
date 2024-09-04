@@ -62,7 +62,7 @@ The anonymization module uses techniques like and data masking and generalizatio
 
 Example:
 Before: {"firstname": "John", "birthday":"1980-09-04", "email": "john.doe@example.com"}
-After: {"firstname": "\*\*\*\*", "birthday":"\*\*\*\*", "age_group":"\(40-50\]", "email": "\*\*\*\*, "email_domain": "example.com"}
+After: {"firstname": "\*\*\*\*", "birthday":"\*\*\*\*", "age_group":"\(40-50\]", "email": "\*\*\*\*", "email_domain": "example.com"}
 
 ## Testing
 
